@@ -62,7 +62,7 @@ with tf.Session() as sess:
 
             # Compute losses
             G_loss, D_loss = sess.run([G_loss_func, D_loss_func], feed_dict={X: X_batch, Z: Z_batch})
-            print("Epoch [%d/%d] - G_loss: %f, D_loss: %f" % (epoch, NUM_EPOCHS - 1, G_loss, D_loss))
+            print("Epoch [{0}/{1}] - G_loss: {2}, D_loss: {3}".format(epoch, NUM_EPOCHS - 1, G_loss, D_loss))
 
             # Run training steps
             _ = sess.run(G_train_step, feed_dict={Z: Z_batch})
